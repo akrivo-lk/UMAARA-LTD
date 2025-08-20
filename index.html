@@ -1,10 +1,317 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1" name="viewport"/>
+    <title>Umaara.uk — Coming Soon</title>
+    <meta content="Umaara.uk is launching soon. Stay tuned!" name="description"/>
+    <!--    <link rel="stylesheet" href="styles.css" />-->
+    <style>
+        :root {
+            --bg: #ffffff;
+            --surface: #f8fafc;
+            --text: #0f172a;
+            --muted: #475569;
+            --blue: #1a73e8; /* accent */
+            --blue-100: #e8f0fe; /* soft */
+            --border: #e5e7eb;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html, body {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        .wrap {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 32px 16px;
+        }
+
+        .hero {
+            text-align: center;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .brand {
+            font-weight: 800;
+            font-size: clamp(28px, 6vw, 40px);
+            letter-spacing: .5px;
+        }
+
+        .brand .dot {
+            color: var(--blue)
+        }
+
+        .tagline {
+            margin: 8px 0 0;
+            color: var(--muted);
+            font-size: clamp(14px, 2.5vw, 16px);
+        }
+
+        .timer {
+            width: min(960px, 100%);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: 0 10px 30px rgba(2, 6, 23, .06);
+        }
+
+        .boxes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .box {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 18px 12px;
+            text-align: center;
+        }
+
+        .num {
+            font-variant-numeric: tabular-nums;
+            font-size: clamp(28px, 7vw, 56px);
+            line-height: 1;
+            font-weight: 800;
+            color: var(--blue);
+        }
+
+        .label {
+            margin-top: 8px;
+            font-size: 13px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .meta {
+            text-align: center;
+            margin: 16px 0 0;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .meta strong {
+            color: var(--text)
+        }
+
+        .live {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 6px 10px;
+            background: var(--blue-100);
+            color: var(--blue);
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            font-weight: 700;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 16px;
+            background: var(--blue);
+            color: #fff;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform .03s ease;
+        }
+
+        .btn:active {
+            transform: translateY(1px)
+        }
+
+        .foot {
+            margin-top: auto;
+            padding: 24px 0 8px;
+            color: var(--muted);
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none !important
+        }
+
+        .visually-hidden {
+            position: absolute !important;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 680px) {
+            .boxes {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+    </style>
+    <link href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2244%22 fill=%22%231a73e8%22/><text x=%2250%22 y=%2260%22 text-anchor=%22middle%22 font-size=%2256%22 fill=%22white%22 font-family=%22Arial%2Csans-serif%22>U</text></svg>"
+          rel="icon">
 </head>
 <body>
+<main class="wrap">
+    <header class="hero">
+        <div class="brand">UMAARA<span class="dot">.uk</span></div>
+        <p class="tagline">We’re building something great. Launching soon.</p>
+    </header>
 
+    <section aria-labelledby="countdown-title" class="timer">
+        <h1 class="visually-hidden" id="countdown-title">Launch countdown</h1>
+
+        <div aria-label="Countdown" class="boxes" role="group">
+            <div aria-label="Days remaining" aria-live="polite" class="box">
+                <div class="num" id="dd">00</div>
+                <div class="label">Days</div>
+            </div>
+            <div aria-label="Hours remaining" aria-live="polite" class="box">
+                <div class="num" id="hh">00</div>
+                <div class="label">Hours</div>
+            </div>
+            <div aria-label="Minutes remaining" aria-live="polite" class="box">
+                <div class="num" id="mm">00</div>
+                <div class="label">Minutes</div>
+            </div>
+            <div aria-label="Seconds remaining" aria-live="polite" class="box">
+                <div class="num" id="ss">00</div>
+                <div class="label">Seconds</div>
+            </div>
+        </div>
+
+        <p class="meta">
+            Launching at <strong id="launchText">—</strong>
+            <span class="tz">(your local time)</span>
+        </p>
+
+        <div aria-live="assertive" class="live hidden" id="liveState" role="status">
+            <span class="badge">We’re live!</span>
+            <a class="btn" href="/" id="ctaLink" rel="noopener">Enter site</a>
+        </div>
+    </section>
+
+    <footer class="foot">
+        <small>© <span id="year"></span> Umaara.uk • All rights reserved</small>
+    </footer>
+</main>
+
+<script>
+    /* ========= Countdown config =========
+ * Set the launch moment in ISO 8601.
+ * Use Z for UTC or add timezone offset like "+01:00".
+ * Examples:
+ *   "2025-12-31T12:00:00Z"
+ *   "2025-11-01T09:00:00+01:00"
+ */
+    const LAUNCH_AT = "2025-12-31T12:00:00Z";   // <- CHANGE THIS
+    const SITE_URL = "/";                      // where the CTA button points
+
+    /* ========= Optional: allow override via URL query ?t=ISO ========= */
+    const urlT = new URLSearchParams(location.search).get("t");
+    const launchIso = urlT || LAUNCH_AT;
+
+    const launchDate = new Date(launchIso);
+    const dd = document.getElementById("dd");
+    const hh = document.getElementById("hh");
+    const mm = document.getElementById("mm");
+    const ss = document.getElementById("ss");
+    const launchText = document.getElementById("launchText");
+    const liveState = document.getElementById("liveState");
+    const ctaLink = document.getElementById("ctaLink");
+    const yearEl = document.getElementById("year");
+
+    yearEl.textContent = new Date().getFullYear();
+    ctaLink.href = SITE_URL;
+
+    /* Format launch time in the visitor’s locale */
+    try {
+        const fmt = new Intl.DateTimeFormat(undefined, {
+            year: "numeric", month: "long", day: "numeric",
+            hour: "2-digit", minute: "2-digit", hour12: false
+        });
+        launchText.textContent = isNaN(launchDate) ? "—" : fmt.format(launchDate);
+    } catch {
+        launchText.textContent = launchIso;
+    }
+
+    /* Main tick */
+    let intervalId = null;
+
+    function pad(n) {
+        return String(Math.max(0, n)).padStart(2, "0");
+    }
+
+    function render(diffMs) {
+        if (diffMs <= 0 || !isFinite(diffMs)) {
+            dd.textContent = "00";
+            hh.textContent = "00";
+            mm.textContent = "00";
+            ss.textContent = "00";
+            liveState.classList.remove("hidden");
+            return;
+        }
+        const totalSeconds = Math.floor(diffMs / 1000);
+        const days = Math.floor(totalSeconds / 86400);
+        const hours = Math.floor((totalSeconds % 86400) / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        dd.textContent = pad(days);
+        hh.textContent = pad(hours);
+        mm.textContent = pad(minutes);
+        ss.textContent = pad(seconds);
+    }
+
+    function tick() {
+        const now = new Date();
+        const diff = launchDate - now; // ms
+        render(diff);
+
+        if (diff <= 0 && intervalId) {
+            clearInterval(intervalId);
+            intervalId = null;
+        }
+    }
+
+    /* Guard invalid date */
+    if (isNaN(launchDate)) {
+        console.error("Invalid LAUNCH_AT:", launchIso);
+        render(NaN);
+    } else {
+        tick(); // initial
+        intervalId = setInterval(tick, 1000);
+    }
+
+</script>
 </body>
 </html>
