@@ -89,18 +89,18 @@
         <div class="row d-md-flex justify-content-center">
             <div class="col-md-12">
                 <div class="wrap-appointment bg-white d-md-flex pl-md-4 pb-5 pb-md-0">
-                    <form action="#" class="appointment w-100">
+                    <form method="post" id="apform" action="https://formspree.io/f/xrbarajj" class="appointment w-100">
                         <div class="row justify-content-center">
                             <div class="col-12 col-md d-flex align-items-center pt-4 pt-md-0">
                                 <div class="form-group py-md-4 py-2 px-4 px-md-0">
                                     <label for="name">Name</label>
-                                    <input class="form-control" placeholder="Your Name" type="text">
+                                    <input class="form-control" placeholder="Your Name" name="name" type="text">
                                 </div>
                             </div>
                             <div class="col-12 col-md d-flex align-items-center">
                                 <div class="form-group py-md-4 py-2 px-4 px-md-0">
                                     <label for="phone">Phone number</label>
-                                    <input class="form-control" placeholder="Phone number" type="text">
+                                    <input class="form-control" placeholder="Phone number" name="phone" type="text">
                                 </div>
                             </div>
                             <div class="col-12 col-md d-flex align-items-center">
@@ -109,14 +109,14 @@
                                     <div class="form-field">
                                         <div class="select-wrap">
                                             <div class="icon"><span class="fa fa-chevron-down"></span></div>
-                                            <select class="form-control">
-                                                <option value="">House Cleaning</option>
-                                                <option value="">Office Cleaning</option>
-                                                <option value="">End of Tenancy Cleaning</option>
-                                                <option value="">Carpet & Upholstery Cleaning</option>
-                                                <option value="">Deep Cleaning</option>
-                                                <option value="">Window Cleaning</option>
-                                                <option value="">Commercial Cleaning</option>
+                                            <select class="form-control" name="type">
+                                                <option value="House Cleaning">House Cleaning</option>
+                                                <option value="Office Cleaning">Office Cleaning</option>
+                                                <option value="End of Tenancy Cleaning">End of Tenancy Cleaning</option>
+                                                <option value="Carpet & Upholstery Cleaning">Carpet & Upholstery Cleaning</option>
+                                                <option value="Deep Cleaning">Deep Cleaning</option>
+                                                <option value="Window Cleaning">Window Cleaning</option>
+                                                <option value="Commercial Cleaning">Commercial Cleaning</option>
                                             </select>
                                         </div>
                                     </div>
@@ -124,7 +124,7 @@
                             </div>
                             <div class="col-12 col-md d-flex align-items-center align-items-stretch">
                                 <div class="form-group py-md-4 py-2 px-4 px-md-0 d-flex align-items-stretch bg-primary">
-                                    <input class="btn btn-primary py-3 px-4" type="submit" value="Book Appointment">
+                                    <input class="btn btn-primary py-3 px-4" type="submit" formtarget="_blank" value="Book Appointment">
                                 </div>
                             </div>
                         </div>
