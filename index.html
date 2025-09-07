@@ -1,257 +1,598 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>UMAARA LTD UK — Coming Soon</title>
-    <meta name="description" content="UMAARA.UK is launching soon. Join the list and be first to know when we open." />
-    <meta property="og:title" content="UMAARA.UK — Coming Soon" />
-    <meta property="og:description" content="Launching 17 September 2025. Set a reminder and join the waitlist." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://umaara.uk" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
-    <style>
-        :root{
-            --bg: #0b1020;
-            --fg: #e5e7eb;
-            --muted: #9ca3af;
-            --accent1: #7c3aed; /* violet */
-            --accent2: #06b6d4; /* cyan */
-            --glass: rgba(255,255,255,.06);
-            --glass-border: rgba(255,255,255,.12);
-        }
-        *{ box-sizing: border-box }
-        html,body{ height:100% }
-        body{
-            margin:0;
-            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-            color: var(--fg);
-            background:
-                    radial-gradient(1000px 600px at 10% 10%, rgba(124,58,237,.15), transparent),
-                    radial-gradient(900px 500px at 90% 30%, rgba(6,182,212,.12), transparent),
-                    linear-gradient(120deg, #0b1020 0%, #0b1226 100%);
-            min-height: 100vh;
-            display:grid; place-items:center;
-            overflow:hidden;
-        }
+    <title>UMAARA LTD - Professional Cleaning Services in London</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
-        /* Floating color orbs */
-        .bg-orbs::before, .bg-orbs::after{
-            content:""; position: fixed; width:42vmax; height:42vmax; border-radius:50%;
-            background: radial-gradient(circle at 30% 30%, rgba(124,58,237,.35), transparent 60%);
-            filter: blur(60px); animation: float1 16s ease-in-out infinite; top:-12vmax; left:-10vmax; pointer-events:none;
-        }
-        .bg-orbs::after{
-            background: radial-gradient(circle at 70% 70%, rgba(6,182,212,.35), transparent 60%);
-            top:auto; bottom:-14vmax; right:-10vmax; left:auto; animation: float2 18s ease-in-out infinite;
-        }
-        @keyframes float1{ 0%,100%{ transform: translateY(0)} 50%{ transform: translateY(30px)} }
-        @keyframes float2{ 0%,100%{ transform: translateY(0)} 50%{ transform: translateY(-40px)} }
-
-        .container{ width:min(1100px, 92%); margin-inline:auto; position:relative; z-index:1; padding-block:48px }
-        .header{ display:flex; align-items:center; justify-content:space-between; gap:12px; }
-        .logo{ display:flex; align-items:center; gap:10px }
-        .logo-badge{ width:40px; height:40px; border-radius:12px; background:linear-gradient(135deg,var(--accent1),var(--accent2)); display:grid; place-items:center; font-weight:800; color:white; box-shadow:0 10px 30px rgba(124,58,237,.3), 0 10px 35px rgba(6,182,212,.25) }
-        .logo-title{ font-weight:800; letter-spacing:.8px }
-        .badge{ border:1px solid var(--glass-border); background:var(--glass); padding:6px 10px; border-radius:999px; font-size:.85rem; color:var(--muted); backdrop-filter: blur(10px) }
-
-        .hero{ margin-top:60px; text-align:center }
-        h1{ font-size: clamp(2.5rem, 6vw, 4.5rem); margin:0; font-weight:800; line-height:1.05; background: linear-gradient(90deg, var(--fg), #c7d2fe); -webkit-background-clip:text; background-clip:text; color:transparent }
-        .tagline{ margin-top:14px; color:var(--muted); font-size: clamp(1rem, 2vw, 1.125rem) }
-
-        .card{ margin-top:36px; border:1px solid var(--glass-border); background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)); border-radius:24px; padding:26px; backdrop-filter: blur(10px); box-shadow:0 12px 35px rgba(0,0,0,.35) }
-        .countdown{ display:grid; grid-template-columns: repeat(4, minmax(120px, 1fr)); gap:16px; align-items:stretch }
-        .unit{ position:relative; padding:22px; border-radius:18px; border:1px solid var(--glass-border); background:rgba(255,255,255,.04) }
-        .unit .label{ display:block; text-transform:uppercase; letter-spacing:2px; color:var(--muted); font-size:.72rem; margin-bottom:8px }
-        .digits{ display:flex; align-items:baseline; gap:8px }
-        .number{ font-variant-numeric: tabular-nums; font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight:800; line-height:1 }
-
-        /* subtle tick animation when a number changes */
-        .number.tick{ animation: pop .5s ease }
-        @keyframes pop{ 0%{ transform: scale(1); filter:brightness(1) } 35%{ transform:scale(1.08) } 100%{ transform:scale(1) } }
-
-        .bottom-row{ margin-top:22px; display:flex; gap:16px; flex-wrap:wrap; align-items:center; justify-content:center }
-        .cta{ display:inline-flex; align-items:center; gap:10px; padding:14px 18px; border-radius:14px; background: linear-gradient(135deg, var(--accent1), var(--accent2)); color:white; text-decoration:none; font-weight:700; box-shadow:0 10px 30px rgba(124,58,237,.35); transition: transform .2s ease, box-shadow .2s }
-        .cta:hover{ transform: translateY(-2px); box-shadow:0 14px 40px rgba(6,182,212,.35) }
-        .ghost{ background:transparent; border:1px solid var(--glass-border); color:var(--fg); box-shadow:none }
-        .ghost:hover{ background: var(--glass) }
-
-        .footer{ margin-top:36px; text-align:center; color:var(--muted); font-size:.9rem }
-        .progress{ height:8px; background:rgba(255,255,255,.06); border-radius:999px; overflow:hidden; margin-top:18px }
-        .progress > span{ display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--accent1),var(--accent2)); transition: width 1s ease }
-
-        @media (max-width: 800px){
-            .countdown{ grid-template-columns: repeat(2, minmax(120px, 1fr)); }
-            .header{ flex-direction:column; gap:8px }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/owl.carousel.min.css" rel="stylesheet">
+    <link href="css/owl.theme.default.min.css" rel="stylesheet">
+    <link href="css/magnific-popup.css" rel="stylesheet">
+    <link href="css/flaticon.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" href="favicon.png">
 </head>
 <body>
-<div class="bg-orbs"></div>
-<div class="container">
-    <header class="header">
-        <div class="logo">
-            <div class="logo-badge">U</div>
-            <div class="logo-title">UMAARA.UK</div>
+<div class="wrap">
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-12 col-md d-flex align-items-center">
+                <p class="mb-0 phone"><span class="mailus">Phone:</span> <a href="tel:+447957979965">+44 7957 979965</a>
+                    | <span class="mailus">Email:</span> <a href="mailto:info@umaara.co.uk">info@umaara.co.uk</a></p>
+            </div>
+            <div class="col-12 col-md d-flex justify-content-md-end">
+                <div class="social-media">
+                    <p class="mb-0 d-flex">
+                        <a class="d-flex align-items-center justify-content-center" href="#"><span
+                                class="fa fa-facebook"></span></a>
+                        <a class="d-flex align-items-center justify-content-center" href="#"><span
+                                class="fa fa-twitter"></span></a>
+                        <a class="d-flex align-items-center justify-content-center" href="#"><span
+                                class="fa fa-instagram"></span></a>
+                    </p>
+                </div>
+            </div>
         </div>
-        <span class="badge">Launching • 17 Sep 2025</span>
-    </header>
-
-    <main class="hero">
-        <h1>We're crafting something brilliant</h1>
-        <p class="tagline">UMAARA.UK is getting ready to launch. Join the list and be first to know when we open.</p>
-
-        <section class="card">
-            <div class="countdown" id="countdown">
-                <div class="unit">
-                    <span class="label">Days</span>
-                    <div class="digits"><span id="days" class="number">–</span></div>
-                </div>
-                <div class="unit">
-                    <span class="label">Hours</span>
-                    <div class="digits"><span id="hours" class="number">–</span></div>
-                </div>
-                <div class="unit">
-                    <span class="label">Minutes</span>
-                    <div class="digits"><span id="mins" class="number">–</span></div>
-                </div>
-                <div class="unit">
-                    <span class="label">Seconds</span>
-                    <div class="digits"><span id="secs" class="number">–</span></div>
-                </div>
-            </div>
-
-            <div class="bottom-row">
-                <a class="cta" id="icsBtn" href="#" download="UMAARA-UK-Launch.ics" aria-label="Add launch to your calendar">Add to Calendar</a>
-                <a class="cta ghost" href="mailto:hello@umaara.uk?subject=Keep%20me%20posted&body=Hi%20UMAARA%2C%20please%20let%20me%20know%20when%20you%20launch." aria-label="Email us to join the waitlist">Join the waitlist</a>
-            </div>
-
-            <div class="progress" aria-hidden="true">
-                <span id="progressBar"></span>
-            </div>
-        </section>
-
-        <p class="footer">© <span id="year"></span> UMAARA.UK • Built with ❤️ in the UK by AKRIVO LTD</p>
-    </main>
+    </div>
 </div>
 
-<!-- tiny confetti lib for launch moment -->
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js" defer></script>
-<script>
-    (() => {
-        // Set the target launch time (London time).
-        // Change the time if you like (HH:MM:SS). 10:00 = 10am.
-        const targetISO = '2025-09-17T10:00:00+01:00';
-        const target = new Date(targetISO);
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">UMAARA<span> LTD</span></a>
+        <button class="navbar-toggler" data-target="#ftco-nav" data-toggle="collapse" type="button">
+            <span class="fa fa-bars"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-        const els = {
-            days: document.getElementById('days'),
-            hours: document.getElementById('hours'),
-            mins: document.getElementById('mins'),
-            secs: document.getElementById('secs'),
-            bar: document.getElementById('progressBar'),
-            year: document.getElementById('year'),
-            ics: document.getElementById('icsBtn'),
-        };
+<div class="hero-wrap js-fullheight" data-stellar-background-ratio="0.5"
+     style="background-image: url('images/bg_1.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-start">
+            <div class="col-md-6 ftco-animate">
+                <h2 class="subheading">Professional Cleaning Services in London</h2>
+                <h1 class="mb-4">Reliable, Affordable & Trusted Cleaning by UMAARA LTD</h1>
+                <p><a class="btn btn-primary mr-md-4 py-2 px-4" href="services.html">Explore Services <span
+                        class="ion-ios-arrow-forward"></span></a></p>
+            </div>
+        </div>
+    </div>
+</div>
 
-        els.year.textContent = new Date().getFullYear();
+<section class="ftco-appointment ftco-section ftco-no-pt ftco-no-pb">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row d-md-flex justify-content-center">
+            <div class="col-md-12">
+                <div class="wrap-appointment bg-white d-md-flex pl-md-4 pb-5 pb-md-0">
+                    <form action="#" class="appointment w-100">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md d-flex align-items-center pt-4 pt-md-0">
+                                <div class="form-group py-md-4 py-2 px-4 px-md-0">
+                                    <label for="name">Name</label>
+                                    <input class="form-control" placeholder="Your Name" type="text">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md d-flex align-items-center">
+                                <div class="form-group py-md-4 py-2 px-4 px-md-0">
+                                    <label for="phone">Phone number</label>
+                                    <input class="form-control" placeholder="Phone number" type="text">
+                                </div>
+                            </div>
+                            <div class="col-12 col-md d-flex align-items-center">
+                                <div class="form-group py-md-4 py-2 px-4 px-md-0">
+                                    <label for="service">Select Service</label>
+                                    <div class="form-field">
+                                        <div class="select-wrap">
+                                            <div class="icon"><span class="fa fa-chevron-down"></span></div>
+                                            <select class="form-control">
+                                                <option value="">House Cleaning</option>
+                                                <option value="">Office Cleaning</option>
+                                                <option value="">End of Tenancy Cleaning</option>
+                                                <option value="">Carpet & Upholstery Cleaning</option>
+                                                <option value="">Deep Cleaning</option>
+                                                <option value="">Window Cleaning</option>
+                                                <option value="">Commercial Cleaning</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md d-flex align-items-center align-items-stretch">
+                                <div class="form-group py-md-4 py-2 px-4 px-md-0 d-flex align-items-stretch bg-primary">
+                                    <input class="btn btn-primary py-3 px-4" type="submit" value="Book Appointment">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        // Progress bar from "now" to launch (cosmetic per page view).
-        const start = new Date(); // when user opens the page
-        const totalMs = Math.max(1, target - start);
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container">
+        <div class="row d-flex no-gutters">
+            <div class="col-md-6 d-flex">
+                <div class="img d-flex align-items-center justify-content-center py-5 py-md-0"
+                     style="background-image:url(images/about.jpg);">
+                    <div class="time-open-wrap">
+                        <div class="desc p-4">
+                            <h2>Business Hours</h2>
+                            <div class="opening-hours">
+                                <h4>Opening Days:</h4>
+                                <p class="pl-3">
+                                    <span><strong>Monday – Friday:</strong> 8am - 8pm</span>
+                                    <span><strong>Saturday:</strong> 9am - 5pm</span>
+                                </p>
+                                <h4>Closed:</h4>
+                                <p class="pl-3">
+                                    <span>Sundays</span>
+                                    <span>UK Public Holidays</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="desc p-4 bg-secondary">
+                            <h3 class="heading">For Urgent Bookings</h3>
+                            <span class="phone">+44 7957 979965</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 pl-md-5 pt-md-5">
+                <div class="row justify-content-start py-5">
+                    <div class="col-md-12 heading-section ftco-animate">
+                        <span class="subheading">Welcome to UMAARA LTD</span>
+                        <h2 class="mb-4">Your Trusted Cleaning Partner in London</h2>
+                        <p>At UMAARA LTD, we provide professional, reliable and affordable cleaning services across
+                            London. From domestic cleaning to commercial projects, our trained staff deliver exceptional
+                            results with attention to detail, ensuring every space feels fresh, hygienic and
+                            welcoming.</p>
+                    </div>
+                </div>
+                <div class="row ftco-counter py-5" id="section-counter">
+                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18">
+                            <div class="text">
+                                <strong class="number" data-number="1">0</strong>
+                            </div>
+                            <div class="text">
+                                <span>Years of <br>Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18">
+                            <div class="text">
+                                <strong class="number" data-number="5">0</strong>
+                            </div>
+                            <div class="text">
+                                <span>Happy <br>Customers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 d-flex justify-content-center counter-wrap ftco-animate">
+                        <div class="block-18">
+                            <div class="text">
+                                <strong class="number" data-number="5">0</strong>
+                            </div>
+                            <div class="text">
+                                <span>Projects <br>Completed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        function pad(n){ return String(n).padStart(2, '0'); }
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">Services</span>
+                <h2>Our Cleaning Solutions</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-workplace"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Office Cleaning</h3>
+                        <p>Professional office cleaning to keep your workplace spotless, safe and productive.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-rug"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Carpet & Upholstery Cleaning</h3>
+                        <p>Deep cleaning services to refresh carpets, rugs and furniture, removing dirt and stains.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-kitchen"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Kitchen Deep Cleaning</h3>
+                        <p>Hygienic cleaning for commercial and domestic kitchens, ensuring spotless, safe cooking
+                            spaces.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-balcony"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Window Cleaning</h3>
+                        <p>Crystal-clear window cleaning for homes, offices and high-rise buildings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-garden"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">Garden & Outdoor Cleaning</h3>
+                        <p>Keeping outdoor areas clean and welcoming, including patios, driveways and gardens.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 services ftco-animate">
+                <div class="d-block d-flex">
+                    <div class="icon d-flex justify-content-center align-items-center">
+                        <span class="flaticon-cleaning"></span>
+                    </div>
+                    <div class="media-body pl-3">
+                        <h3 class="heading">End of Tenancy Cleaning</h3>
+                        <p>Comprehensive cleaning to meet landlord and letting agency standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        let last = { d: null, h: null, m: null, s: null };
-        const tick = () => {
-            const now = new Date();
-            let diff = Math.max(0, target - now);
-            const sec = Math.floor(diff / 1000) % 60;
-            const min = Math.floor(diff / (1000*60)) % 60;
-            const hour = Math.floor(diff / (1000*60*60)) % 24;
-            const day = Math.floor(diff / (1000*60*60*24));
+<section class="ftco-section testimony-section ftco-bg-dark">
+    <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+            <div class="col-md-7 heading-section heading-section-white text-center ftco-animate">
+                <span class="subheading">Testimonials</span>
+                <h2>What Our Clients Say</h2>
+            </div>
+        </div>
+        <div class="row ftco-animate">
+            <div class="col-md-12">
+                <div class="carousel-testimony owl-carousel ftco-owl">
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-quote-right"></span></div>
+                            <div class="text">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Sarah Thompson</p>
+                                        <span class="position">Homeowner</span>
+                                    </div>
+                                </div>
+                                <p class="mb-1">“UMAARA LTD left my home sparkling clean! Their staff were professional
+                                    and friendly.”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-quote-right"></span></div>
+                            <div class="text">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">James Wilson</p>
+                                        <span class="position">Business Owner</span>
+                                    </div>
+                                </div>
+                                <p class="mb-1">“We use UMAARA LTD for our office cleaning – always reliable and
+                                    efficient. Highly recommended”</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimony-wrap py-4">
+                            <div class="icon d-flex align-items-center justify-content-center"><span
+                                    class="fa fa-quote-right"></span></div>
+                            <div class="text">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+                                    <div class="pl-3">
+                                        <p class="name">Emma Roberts</p>
+                                        <span class="position">Tenant</span>
+                                    </div>
+                                </div>
+                                <p class="mb-1">“Their end of tenancy cleaning service helped me secure my full deposit
+                                    back. Highly recommended!”</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-            // progress animation (from page-open to target)
-            const elapsed = now - start;
-            els.bar.style.width = Math.min(100, (elapsed / totalMs) * 100).toFixed(2) + '%';
+<section class="ftco-section ftco-no-pb">
+    <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+            <div class="col-md-12 heading-section  text-center ftco-animate">
+                <span class="subheading">Our Projects</span>
+                <h2>Recent Cleaning Work</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(images/work-1.jpg);">
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Residential Cleaning</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(images/work-2.jpg);">
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Office Cleaning</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(images/work-3.jpg);">
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Window Cleaning</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="work img d-flex align-items-center" style="background-image: url(images/work-4.jpg);">
+                    <div class="desc w-100 px-4 text-center pt-5 mt-5">
+                        <div class="text w-100 mb-3 mt-4">
+                            <h2><a href="work-single.html">Carpet Cleaning</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-            const values = { d: day, h: pad(hour), m: pad(min), s: pad(sec) };
-            const assign = (el, val, key) => {
-                if (last[key] !== val) {
-                    el.textContent = val;
-                    el.classList.remove('tick');
-                    // reflow to restart animation
-                    void el.offsetWidth;
-                    el.classList.add('tick');
-                    last[key] = val;
-                }
-            };
-            assign(els.days, values.d, 'd');
-            assign(els.hours, values.h, 'h');
-            assign(els.mins, values.m, 'm');
-            assign(els.secs, values.s, 's');
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading">Blog</span>
+                <h2>Cleaning Tips & News</h2>
+            </div>
+        </div>
+        <div class="row d-flex">
+            <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+                <div class="blog-entry align-self-stretch">
+                    <a class="block-20 rounded" href="blog-single.html"
+                       style="background-image: url('images/image_1.jpg');"></a>
+                    <div class="text mt-3 px-4">
+                        <h3 class="heading"><a href="#">Top 5 Benefits of Professional Cleaning</a></h3>
+                        <p>Discover how UMAARA LTD’s services save you time, improve hygiene, and create healthier
+                            spaces.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+                <div class="blog-entry align-self-stretch">
+                    <a class="block-20 rounded" href="blog-single.html"
+                       style="background-image: url('images/image_2.jpg');"></a>
+                    <div class="text mt-3 px-4">
+                        <h3 class="heading"><a href="#">How to Keep Carpets Fresh</a></h3>
+                        <p>Learn simple tips to extend the life of your carpets and keep them looking their best.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+                <div class="blog-entry align-self-stretch">
+                    <a class="block-20 rounded" href="blog-single.html"
+                       style="background-image: url('images/image_3.jpg');"></a>
+                    <div class="text mt-3 px-4">
+                        <h3 class="heading"><a href="#">Why End of Tenancy Cleaning Matters</a></h3>
+                        <p>Ensure smooth move-outs with thorough cleaning that meets landlord requirements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-            if (diff <= 0) {
-                opened();
-                return;
-            }
-            requestAnimationFrame(tick);
-        };
+<section class="ftco-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center pb-5 mb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <span class="subheading mb-3">Price & Plans</span>
+                <h2>Affordable Packages</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="block-7">
+                    <div class="text-center">
+                        <div class="icon d-flex align-items-center justify-content-center"><span
+                                class="fa flaticon-sprayer"></span></div>
+                        <h4 class="heading-2">Basic</h4>
+                        <span class="price"><sup>£</sup><span class="number">49</span></span>
+                        <ul class="pricing-text mb-5">
+                            <li><span class="fa fa-check mr-2"></span>Bedrooms & Living room</li>
+                            <li><span class="fa fa-check mr-2"></span>Bathroom cleaning</li>
+                            <li><span class="fa fa-check mr-2"></span>Vacuuming</li>
+                        </ul>
+                        <a class="btn btn-primary px-4 py-3" href="#">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="block-7 active">
+                    <div class="text-center">
+                        <div class="icon d-flex align-items-center justify-content-center"><span
+                                class="fa flaticon-vacuum-cleaner"></span></div>
+                        <h4 class="heading-2">Standard</h4>
+                        <span class="price"><sup>£</sup><span class="number">79</span></span>
+                        <ul class="pricing-text mb-5">
+                            <li><span class="fa fa-check mr-2"></span>Full House Cleaning</li>
+                            <li><span class="fa fa-check mr-2"></span>Kitchen Deep Clean</li>
+                            <li><span class="fa fa-check mr-2"></span>Windows & Floors</li>
+                        </ul>
+                        <a class="btn btn-primary px-4 py-3" href="#">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="block-7">
+                    <div class="text-center">
+                        <div class="icon d-flex align-items-center justify-content-center"><span
+                                class="fa flaticon-tap"></span></div>
+                        <h4 class="heading-2">Premium</h4>
+                        <span class="price"><sup>£</sup><span class="number">109</span></span>
+                        <ul class="pricing-text mb-5">
+                            <li><span class="fa fa-check mr-2"></span>Deep Cleaning</li>
+                            <li><span class="fa fa-check mr-2"></span>Carpet & Upholstery</li>
+                            <li><span class="fa fa-check mr-2"></span>Outdoor Areas</li>
+                        </ul>
+                        <a class="btn btn-primary px-4 py-3" href="#">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3 ftco-animate">
+                <div class="block-7">
+                    <div class="text-center">
+                        <div class="icon d-flex align-items-center justify-content-center"><span
+                                class="fa flaticon-cleaning"></span></div>
+                        <h4 class="heading-2">Platinum</h4>
+                        <span class="price"><sup>£</sup><span class="number">159</span></span>
+                        <ul class="pricing-text mb-5">
+                            <li><span class="fa fa-check mr-2"></span>End of Tenancy</li>
+                            <li><span class="fa fa-check mr-2"></span>Commercial Spaces</li>
+                            <li><span class="fa fa-check mr-2"></span>Custom Requests</li>
+                        </ul>
+                        <a class="btn btn-primary px-4 py-3" href="#">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        function opened(){
-            document.querySelector('.tagline').textContent = "We're open! 🎉 Come on in.";
-            document.getElementById('countdown').style.display = 'none';
-            els.bar.style.width = '100%';
-            setTimeout(() => {
-                confetti({ particleCount: 160, spread: 70, origin: { y: 0.6 } });
-                confetti({ particleCount: 120, spread: 100, origin: { y: 0.7 } });
-            }, 300);
-        }
+<footer class="footer ftco-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h2 class="footer-heading">UMAARA LTD</h2>
+                <p>Professional cleaning services across London. Reliable, affordable and trusted by homes and
+                    businesses alike.</p>
+                <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-4">
+                    <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h2 class="footer-heading">Quick Links</h2>
+                <ul class="list-unstyled">
+                    <li><a class="py-1 d-block" href="index.html">Home</a></li>
+                    <li><a class="py-1 d-block" href="about.html">About</a></li>
+                    <li><a class="py-1 d-block" href="services.html">Services</a></li>
+                    <li><a class="py-1 d-block" href="portfolio.html">Portfolio</a></li>
+                    <li><a class="py-1 d-block" href="pricing.html">Pricing</a></li>
+                    <li><a class="py-1 d-block" href="blog.html">Blog</a></li>
+                    <li><a class="py-1 d-block" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
+                <h2 class="footer-heading">Contact Us</h2>
+                <ul class="list-unstyled">
+                    <li><span class="icon fa fa-map-marker"></span><span class="text"> London, United Kingdom</span>
+                    </li>
+                    <li><a href="tel:+447957979965"><span class="icon fa fa-phone"></span><span class="text">+44 7957 979965</span></a>
+                    </li>
+                    <li><a href="mailto:info@umaara.uk"><span class="icon fa fa-paper-plane"></span><span
+                            class="text">info@umaara.uk</span></a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <h2 class="footer-heading">Founder</h2>
+                <p>Umesha Rathnathilake</p>
+                <p class="mt-3"><small>Created by <a href="https://akrivo.uk" target="_blank">AKRIVO LTD</a></small></p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12 text-center">
+                <p class="copyright">
+                    &copy;<script>document.write(new Date().getFullYear());</script>
+                    AKRIVO LTD. All Rights Reserved.
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
 
-        // Build a downloadable ICS file (Add to Calendar)
-        function buildICS(){
-            // 1 hour window for the event
-            const dtStart = toICSDate(target);
-            const dtEnd = toICSDate(new Date(target.getTime() + 60*60*1000));
-            const uid = 'umaara-uk-launch-' + Date.now();
-            const ics = [
-                'BEGIN:VCALENDAR',
-                'VERSION:2.0',
-                'PRODID:-//UMAARA.UK//ComingSoon//EN',
-                'BEGIN:VEVENT',
-                'UID:' + uid,
-                'DTSTAMP:' + toICSDate(new Date()),
-                'DTSTART:' + dtStart,
-                'DTEND:' + dtEnd,
-                'SUMMARY:UMAARA.UK — Launch',
-                'DESCRIPTION:UMAARA.UK goes live! Visit https://umaara.uk',
-                'URL:https://umaara.uk',
-                'END:VEVENT',
-                'END:VCALENDAR'
-            ].join('\r\n');
+<div class="show fullscreen" id="ftco-loader">
+    <svg class="circular" height="48px" width="48px">
+        <circle class="path-bg" cx="24" cy="24" fill="none" r="22" stroke="#eeeeee" stroke-width="4"/>
+        <circle class="path" cx="24" cy="24" fill="none" r="22" stroke="#F96D00" stroke-miterlimit="10"
+                stroke-width="4"/>
+    </svg>
+</div>
 
-            const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            els.ics.href = url;
-        }
-        function toICSDate(d){
-            // UTC Zulu format: YYYYMMDDTHHMMSSZ
-            const pad2 = n => String(n).padStart(2, '0');
-            return d.getUTCFullYear()
-                + pad2(d.getUTCMonth()+1)
-                + pad2(d.getUTCDate())
-                + 'T'
-                + pad2(d.getUTCHours())
-                + pad2(d.getUTCMinutes())
-                + pad2(d.getUTCSeconds())
-                + 'Z';
-        }
-
-        buildICS();
-        tick();
-    })();
-</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-migrate-3.0.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.stellar.min.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/scrollax.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
