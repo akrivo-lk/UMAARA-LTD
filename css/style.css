@@ -13680,3 +13680,7 @@ textarea.form-control {
         stroke-dashoffset: -136px;
     }
 }
+
+.jc{
+    justify-content: center;
+}
