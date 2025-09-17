@@ -16,6 +16,68 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="favicon.png">
+    <script type="application/ld+json" class="aioseo-schema">
+        {
+            "@context":"https://schema.org",
+            "@graph":[
+                {
+                    "@type":"BreadcrumbList",
+                    "@id":"https://umaara.uk/blog.html#breadcrumblist",
+                    "itemListElement":[
+                        {
+                            "@type":"ListItem",
+                            "@id":"https://umaara.uk#listItem",
+                            "position":1,
+                            "name":"Home",
+                            "item":"https://umaara.uk",
+                            "nextItem":{"@type":"ListItem","@id":"https://umaara.uk/blog.html#listItem","name":"Blog"}
+                        },
+                        {
+                            "@type":"ListItem",
+                            "@id":"https://umaara.uk/blog.html#listItem",
+                            "position":2,
+                            "name":"Blog",
+                            "previousItem":{"@type":"ListItem","@id":"https://umaara.uk#listItem","name":"Home"}
+                        }
+                    ]
+                },
+                {
+                    "@type":"Organization",
+                    "@id":"https://umaara.uk/#organization",
+                    "name":"UMAARA LTD",
+                    "description":"UMAARA LTD is a trusted cleaning services company in London, sharing updates, cleaning tips, and industry insights on our blog.",
+                    "url":"https://umaara.uk/",
+                    "email":"info@umaara.uk",
+                    "logo":{
+                        "@type":"ImageObject",
+                        "url":"https://umaara.uk/favicon.png",
+                        "@id":"https://umaara.uk/blog.html#organizationLogo"
+                    },
+                    "image":{"@id":"https://umaara.uk/blog.html#organizationLogo"}
+                },
+                {
+                    "@type":"CollectionPage",
+                    "@id":"https://umaara.uk/blog.html#collectionpage",
+                    "url":"https://umaara.uk/blog.html",
+                    "name":"Blog – UMAARA LTD",
+                    "description":"Discover UMAARA LTD blog articles on professional cleaning services, home care, and hygiene tips.",
+                    "inLanguage":"en-GB",
+                    "isPartOf":{"@id":"https://umaara.uk/#website"},
+                    "breadcrumb":{"@id":"https://umaara.uk/blog.html#breadcrumblist"}
+                },
+                {
+                    "@type":"WebSite",
+                    "@id":"https://umaara.uk/#website",
+                    "url":"https://umaara.uk/",
+                    "name":"UMAARA LTD",
+                    "description":"Professional Cleaning Services in London",
+                    "inLanguage":"en-GB",
+                    "publisher":{"@id":"https://umaara.uk/#organization"}
+                }
+            ]
+        }
+    </script>
+
 </head>
 <body>
 
