@@ -13691,3 +13691,24 @@ textarea.form-control {
 .table td:last-child {
     width: 160px; /* keeps Book Now buttons aligned */
 }
+
+.table td:last-child {
+    width: 100px; /* narrower column */
+}
+
+.table .btn-book-now {
+    padding: 4px 10px;   /* smaller padding */
+    font-size: 14px;     /* smaller text */
+}
+
+@media (max-width: 576px) {
+    .table td:last-child {
+        display: block;
+        text-align: right;
+        margin-top: 5px;
+    }
+    .table tr td:nth-child(2) {
+        display: block;
+        text-align: left;
+    }
+}
