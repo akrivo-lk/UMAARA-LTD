@@ -13684,3 +13684,10 @@ textarea.form-control {
 .jc{
     justify-content: center;
 }
+.table td {
+    vertical-align: middle;
+    text-align: left;
+}
+.table td:last-child {
+    width: 160px; /* keeps Book Now buttons aligned */
+}
