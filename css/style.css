@@ -13703,12 +13703,12 @@ textarea.form-control {
 
 @media (max-width: 576px) {
     .table td:last-child {
-        display: block;
+        /*display: block;*/
         text-align: right;
         margin-top: 5px;
     }
     .table tr td:nth-child(2) {
-        display: block;
+        /*display: block;*/
         text-align: left;
     }
 }
