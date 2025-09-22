@@ -13765,3 +13765,16 @@ textarea.form-control {
     font-weight: 600;
     margin-bottom: 10px;
 }
+
+.promo-popup {
+    border-radius: 15px !important;
+    padding: 20px !important;
+}
+.promo-popup h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.promo-popup p {
+    font-size: 1rem;
+    color: #444;
+}

@@ -209,3 +209,26 @@ document.querySelector("#apform").addEventListener("submit", async function (e) 
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Show after short delay (e.g., 3 seconds)
+    setTimeout(function () {
+        Swal.fire({
+            title: '🎁 A Little Thank-You from UMAARA Cleaning',
+            html: `
+                <p>Your home will sparkle—and so will your day!</p>
+                <p><strong>Every first-time booking includes a complimentary cinnamon-scented candle.</strong></p>
+                <p>It’s our way of saying <em>thank you</em> and leaving your space fresh, clean, and beautifully fragrant long after we’ve finished.</p>
+                <hr>
+                <a href="pricing.html" class="btn btn-primary mt-2">Book Your Clean & Claim Your Gift</a>
+            `,
+            imageUrl: 'favicon.png',   // <- replace with your promo image
+            imageWidth: 120,
+            imageAlt: 'Candle Gift',
+            showConfirmButton: false,
+            showCloseButton: true,
+            customClass: {
+                popup: 'promo-popup'
+            }
+        });
+    }, 3000); // 3 sec delay
+});
