@@ -13712,3 +13712,37 @@ textarea.form-control {
         text-align: left;
     }
 }
+
+
+
+
+.modern-table {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.modern-table thead {
+    background: #f8f9fa;
+    font-weight: 600;
+}
+.modern-table td, .modern-table th {
+    padding: 15px;
+}
+.price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.fast-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+.fast-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.category-title {
+    font-weight: 600;
+    padding-bottom: 5px;
+}
