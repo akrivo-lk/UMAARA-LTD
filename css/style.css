@@ -13746,3 +13746,22 @@ textarea.form-control {
     font-weight: 600;
     padding-bottom: 5px;
 }
+
+.vision-card, .mission-card {
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+.vision-card:hover, .mission-card:hover, .value-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+.value-box {
+    border-radius: 12px;
+    background: #fff;
+    transition: 0.3s ease;
+}
+.value-box h5 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
