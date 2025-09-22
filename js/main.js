@@ -177,36 +177,87 @@
 
 })(jQuery);
 
-
 document.querySelector("#apform").addEventListener("submit", async function (e) {
     e.preventDefault();
     const form = e.target;
+
+    // Extract fields (adjust names/ids as per your form)
+    const name = form.querySelector("[name='name']")?.value.trim();
+    const phone = form.querySelector("[name='phone']")?.value.trim();
+    const email = form.querySelector("[name='email']")?.value.trim();
+
+    // Regex for phone & email validation
+    const phoneRegex = /^[0-9+\-\s]{7,15}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // Validation checks
+    if (!name) {
+        Swal.fire({
+            icon: "warning",
+            title: "Validation Error",
+            text: "⚠️ Please enter your name"
+        });
+        return;
+    }
+    if (!phone) {
+        Swal.fire({
+            icon: "warning",
+            title: "Validation Error",
+            text: "⚠️ Please enter your phone number"
+        });
+        return;
+    }
+    if (!phoneRegex.test(phone)) {
+        Swal.fire({
+            icon: "warning",
+            title: "Validation Error",
+            text: "⚠️ Please enter a valid phone number"
+        });
+        return;
+    }
+    if (email && !emailRegex.test(email)) {
+        Swal.fire({
+            icon: "warning",
+            title: "Validation Error",
+            text: "⚠️ Please enter a valid email address"
+        });
+        return;
+    }
+
+    // If all validations pass → proceed
     const data = new FormData(form);
 
-    const response = await fetch(form.action, {
-        method: form.method,
-        body: data,
-        headers: {'Accept': 'application/json'}
-    });
-
-    if (response.ok) {
-        Swal.fire({
-            icon: 'success',
-            title: 'Success!',
-            text: '✅ Your request was sent successfully. We will contact you soon.',
-            confirmButtonColor: '#0d6efd'
+    try {
+        const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: { 'Accept': 'application/json' }
         });
-        form.reset();
-    } else {
+
+        if (response.ok) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Success!',
+                text: '✅ Your request was sent successfully. We will contact you soon.',
+                confirmButtonColor: '#0d6efd'
+            });
+            form.reset();
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: '❌ Something went wrong. Please try again.',
+                confirmButtonColor: '#d33'
+            });
+        }
+    } catch (err) {
         Swal.fire({
             icon: 'error',
-            title: 'Oops...',
-            text: '❌ Something went wrong. Please try again.',
-            confirmButtonColor: '#d33'
+            title: 'Network Error',
+            text: '⚠️ Unable to connect. Please check your internet and try again.'
         });
     }
 });
-
 
 
 document.addEventListener("DOMContentLoaded", function () {
