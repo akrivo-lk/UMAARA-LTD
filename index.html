@@ -31,32 +31,24 @@
             "@context": "https://schema.org",
             "@graph": [
                 {
-                    "@type": "BreadcrumbList",
-                    "@id": "https://umaara.uk/#breadcrumblist",
-                    "itemListElement": [
-                        {
-                            "@type": "ListItem",
-                            "@id": "https://umaara.uk#listItem",
-                            "position": 1,
-                            "name": "Home"
-                        }
-                    ]
-                },
-                {
                     "@type": "Organization",
                     "@id": "https://umaara.uk/#organization",
                     "name": "UMAARA LTD",
-                    "description": "UMAARA LTD is a London-based cleaning services company, providing high-quality domestic and commercial cleaning. We offer deep cleaning, end-of-tenancy cleaning, housekeeping, and more with a focus on customer satisfaction.",
                     "url": "https://umaara.uk/",
                     "email": "info@umaara.uk",
                     "logo": {
                         "@type": "ImageObject",
-                        "url": "https://umaara.uk/favicon.png",
-                        "@id": "https://umaara.uk/#organizationLogo"
-                    },
-                    "image": {
-                        "@id": "https://umaara.uk/#organizationLogo"
+                        "@id": "https://umaara.uk/#logo",
+                        "url": "https://umaara.uk/favicon.png"
                     }
+                },
+                {
+                    "@type": "WebSite",
+                    "@id": "https://umaara.uk/#website",
+                    "url": "https://umaara.uk/",
+                    "name": "UMAARA LTD",
+                    "inLanguage": "en-GB",
+                    "publisher": { "@id": "https://umaara.uk/#organization" }
                 },
                 {
                     "@type": "WebPage",
@@ -65,25 +57,22 @@
                     "name": "Home – UMAARA LTD",
                     "description": "Professional cleaning services in London – UMAARA LTD. Trusted cleaning solutions for homes and businesses.",
                     "inLanguage": "en-GB",
-                    "isPartOf": {
-                        "@id": "https://umaara.uk/#website"
-                    },
+                    "isPartOf": { "@id": "https://umaara.uk/#website" },
                     "breadcrumb": {
-                        "@id": "https://umaara.uk/#breadcrumblist"
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://umaara.uk/" },
+                            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://umaara.uk/about.html" },
+                            { "@type": "ListItem", "position": 3, "name": "Services", "item": "https://umaara.uk/services.html" },
+                            { "@type": "ListItem", "position": 4, "name": "Contact", "item": "https://umaara.uk/contact.html" },
+                            { "@type": "ListItem", "position": 5, "name": "Prices", "item": "https://umaara.uk/pricing.html" },
+                            { "@type": "ListItem", "position": 6, "name": "Portfolio", "item": "https://umaara.uk/portfolio.html" },
+                            { "@type": "ListItem", "position": 7, "name": "Blog", "item": "https://umaara.uk/blog.html" },
+                            { "@type": "ListItem", "position": 8, "name": "Blog Post", "item": "https://umaara.uk/blog-single.html" }
+                        ]
                     },
                     "datePublished": "2023-01-10T10:00:00+00:00",
                     "dateModified": "2025-09-17T12:00:00+00:00"
-                },
-                {
-                    "@type": "WebSite",
-                    "@id": "https://umaara.uk/#website",
-                    "url": "https://umaara.uk/",
-                    "name": "UMAARA LTD",
-                    "description": "Professional Cleaning Services in London",
-                    "inLanguage": "en-GB",
-                    "publisher": {
-                        "@id": "https://umaara.uk/#organization"
-                    }
                 }
             ]
         }
