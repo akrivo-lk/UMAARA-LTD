@@ -260,7 +260,7 @@ document.querySelector("#apform").addEventListener("submit", async function (e) 
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     // Show after short delay (e.g., 3 seconds)
     setTimeout(function () {
         Swal.fire({
