@@ -75,7 +75,7 @@ function addCommentToList(comment) {
     const li = document.createElement("li");
     li.classList.add("comment");
     li.innerHTML = `
-      <div class="vcard bio"><img src="images/person_1.png" alt="User"></div>
+      <div class="vcard bio"><img src="images/user-circle.jpg" alt="User"></div>
       <div class="comment-body">
           <h3>${comment.name}</h3>
           <div class="meta">${new Date(comment.date).toLocaleString()}</div>
